@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Create a design which contains hello World -->
+    <h1>The Course Information As Follows</h1>
+   <strong>Course Name :</strong> <h2 th:text="${course.coursename}">Course Name</h2>
+   <strong>Course Author :</strong> <h2 th:text="${course.courseauthor}">Course Author</h2>
+<div th:object="${course}">
+<h1>The Course Information by Using Selection Tag As Follows</h1>
+   <strong>Course Name :</strong> <h2 th:text="*{coursename}">Course Name</h2>
+   <strong>Course Author :</strong> <h2 th:text="*{courseauthor}">Course Author</h2>
+</div>
+
+
+</body>
+</html>
