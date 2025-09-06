@@ -4,18 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<style>
+	        table {
+	            border-collapse: collapse;
+	            width: 80%;
+	            margin: 20px auto;
+	        }
+
+	        th, td {
+	            padding: 12px 18px;
+	            border: 1px solid #ccc;
+	            text-align: left;
+	        }
+
+	        th {
+	            background-color: #eaeaea;
+	        }
+
+	        h1 {
+	            text-align: center;
+	            margin-top: 30px;
+	        }
+
+	        .btn {
+	            padding: 8px 16px;
+	            font-size: 14px;
+	            cursor: pointer;
+	            border: none;
+	            border-radius: 4px;
+	        }
+
+	        .btn-add {
+	            background-color: #007bff;
+	            color: white;
+	            margin: 20px auto;
+	            display: block;
+	            width: 150px;
+	            text-align: center;
+	        }
+
+	        .btn-update {
+	            background-color: #4CAF50;
+	            color: white;
+	            margin-right: 6px;
+	        }
+
+	        .btn-delete {
+	            background-color: #f44336;
+	            color: white;
+	        }
+	    </style>
+
 </head>
-<body>
-<!-- Create a design which contains hello World -->
-    <h1>The Course Information As Follows</h1>
-   <strong>Course Name :</strong> <h2 th:text="${course.coursename}">Course Name</h2>
-   <strong>Course Author :</strong> <h2 th:text="${course.courseauthor}">Course Author</h2>
-<div th:object="${course}">
-<h1>The Course Information by Using Selection Tag As Follows</h1>
-   <strong>Course Name :</strong> <h2 th:text="*{coursename}">Course Name</h2>
-   <strong>Course Author :</strong> <h2 th:text="*{courseauthor}">Course Author</h2>
-</div>
+
+	<body>
+	    <h1> Course Details</h1>
+
+	    <!-- Add Student Button -->
+	    <button class="btn btn-add" 
+	            th:onclick="|location.href='@{/courses/add}'|">
+	        Add Courses
+	    </button>
+
+	    <table>
+	        <thead>
+	            <tr>
+	                <th>ID</th>
+	                <th>Course Name</th>
+	                <th>Course Author</th>
+	                <th>Action</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="course : ${courses}">
+	                <td th:text="${course.courseid}">1</td>
+	                <td th:text="${course.coursename}">Name</td>
+	                <td th:text="${course.courseauthor}">Contact</td>
+	               
+	                <td>
+	                    <button class="btn btn-update" 
+	                            th:onclick="'location.href=\'/students/update/' + ${course.courseid} + '\';'">
+	                        Update
+	                    </button>
+	                    <button class="btn btn-delete" 
+	                            th:onclick="'location.href=\'/courses/delete/' + ${course.courseid} + '\';'">
+	                        Delete
+	                    </button>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</body>
 
 
-</body>
 </html>

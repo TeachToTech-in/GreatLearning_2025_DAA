@@ -1,6 +1,8 @@
 package com.rahul;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 //Specifies that the class is an entity. 
 //This annotation is applied to the entity class
@@ -11,6 +13,7 @@ public class Course {
 	//The field or property to which the Id annotation is 
 	//applied should be one of the following types
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int courseid;
 	private String coursename;
 	private String courseauthor;
