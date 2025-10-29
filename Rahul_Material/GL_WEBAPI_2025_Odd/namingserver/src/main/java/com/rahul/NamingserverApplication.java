@@ -2,14 +2,14 @@ package com.rahul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
-@EnableFeignClients
-public class CurrencyConversionWeb2025Application {
+@EnableEurekaServer
+public class NamingserverApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CurrencyConversionWeb2025Application.class, args);
+		SpringApplication.run(NamingserverApplication.class, args);
 	}
 
 }

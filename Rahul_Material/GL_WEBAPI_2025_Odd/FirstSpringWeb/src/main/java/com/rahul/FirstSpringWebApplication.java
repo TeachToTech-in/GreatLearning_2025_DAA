@@ -14,7 +14,15 @@ public class FirstSpringWebApplication {
 	public static void main(String[] args) {
 		var context = new AnnotationConfigApplicationContext(FirstSpringWebApplication.class);
 		DrawingApp d = context.getBean(DrawingApp.class);
-		d.draw();
+		System.out.println(d.hashCode());
+		d = context.getBean(DrawingApp.class);
+		System.out.println(d.hashCode());
+		d = context.getBean(DrawingApp.class);
+		System.out.println(d.hashCode());
+		d = context.getBean(DrawingApp.class);
+		System.out.println(d.hashCode());
+		d = context.getBean(DrawingApp.class);
+		System.out.println(d.hashCode());
 	}
 
 }
