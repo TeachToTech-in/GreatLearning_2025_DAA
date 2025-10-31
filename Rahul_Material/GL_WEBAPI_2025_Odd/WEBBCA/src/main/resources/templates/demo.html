@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <!-- You can add CSS or JavaScript files here -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+		<h1>Student As Follows</h1>
+    </header>
+<h1 th:text="${student.id}">ID</h1>
+<h1 th:text="${student.name}">ID</h1>
+<h1 th:text="${student.contact}">ID</h1>
+<h3>==================Selection ============</h3>
+<div th:object="${student}">
+	<h2 th:text="*{id}">ID</h2>
+	<h2 th:text="*{name}">ID</h2>
+	<h2 th:text="*{contact}">ID</h2>
+	
+</div>
+</body>
+</html>
